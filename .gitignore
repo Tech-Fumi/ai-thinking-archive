@@ -1,0 +1,24 @@
+# Environment
+.env
+.env.*
+!.env.template
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Dependencies (uncomment as needed)
+# node_modules/
+# __pycache__/
+# .venv/
