@@ -1,192 +1,105 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "mcpServers": {
-    "log-analyzer": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_log_analyzer.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-log-analyzer",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "devops-engine": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_devops_engine.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-devops-engine",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "doc-writer": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_doc_writer.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-doc-writer",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "env-manager": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_env_manager.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-env-manager",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "automation-advisor": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_automation_advisor.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-automation-advisor",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "security-guardian": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_security_guardian.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-security-guardian",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "session-manager": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_session_manager.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-session-manager",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "snippet-collector": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_snippet_collector.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-snippet-collector",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "report-generator": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_report_generator.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-report-generator",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "ui-designer": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_ui_designer.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-ui-designer",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "api-registry": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_api_registry.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-api-registry",
-      "env": {
-        "PYTHONPATH": "/home/fumi/infra-automation/mcp-servers/mcp-api-registry/src",
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "test-runner": {
-      "command": "python3",
-      "args": [
-        "-m",
-        "mcp_test_runner.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-test-runner",
-      "env": {
-        "LOG_LEVEL": "INFO"
-      }
-    },
-    "second-brain": {
-      "command": "/home/fumi/infra-automation/.venv/bin/python",
-      "args": [
-        "-m",
-        "mcp_second_brain.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-second-brain",
-      "env": {
-        "PYTHONPATH": "/home/fumi/infra-automation/mcp-servers/mcp-second-brain/src"
-      }
-    },
-    "lightsail-ops": {
-      "command": "/home/fumi/infra-automation/.venv/bin/python",
-      "args": [
-        "-m",
-        "mcp_lightsail_ops.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-lightsail-ops",
-      "env": {
-        "PYTHONPATH": "/home/fumi/infra-automation/mcp-servers/mcp-lightsail-ops/src"
-      }
-    },
-    "model-selector": {
-      "command": "/home/fumi/infra-automation/.venv/bin/python",
-      "args": [
-        "-m",
-        "mcp_model_selector.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-model-selector",
-      "env": {
-        "PYTHONPATH": "/home/fumi/infra-automation/mcp-servers/mcp-model-selector/src"
-      }
+    "task-receiver": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8001/sse"
     },
     "decision-ledger": {
-      "command": "/home/fumi/infra-automation/.venv/bin/python",
-      "args": [
-        "-m",
-        "mcp_decision_ledger.server"
-      ],
-      "cwd": "/home/fumi/infra-automation/mcp-servers/mcp-decision-ledger",
-      "env": {
-        "PYTHONPATH": "/home/fumi/infra-automation/mcp-servers/mcp-decision-ledger/src"
-      }
+      "type": "sse",
+      "url": "http://18.176.47.143:8002/sse"
     },
-    "task-receiver": {
-      "command": "python3",
-      "args": [
-        "server.py"
-      ],
-      "cwd": "/home/fumi/infra-automation/claude-relay-bridge/mcp-task-receiver",
-      "env": {
-        "RELAY_API_URL": "http://localhost:8050"
-      }
+    "snippet-collector": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8003/sse"
+    },
+    "session-manager": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8004/sse"
+    },
+    "model-selector": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8005/sse"
+    },
+    "log-analyzer": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8006/sse"
+    },
+    "devops-engine": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8007/sse"
+    },
+    "test-runner": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8008/sse"
+    },
+    "api-registry": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8009/sse"
+    },
+    "ui-designer": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8010/sse"
+    },
+    "security-guardian": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8011/sse"
+    },
+    "memory-hub": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8012/sse"
+    },
+    "env-manager": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8013/sse"
+    },
+    "automation-advisor": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8014/sse"
+    },
+    "rule-enforcer": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8015/sse"
+    },
+    "lightsail-ops": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8017/sse"
+    },
+    "health-checker": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8018/sse"
+    },
+    "knowledge-graph": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8019/sse"
+    },
+    "second-brain": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8020/sse"
+    },
+    "port-manager": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8022/sse"
+    },
+    "doc-writer": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8023/sse"
+    },
+    "tool-router": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8024/sse"
+    },
+    "skill-suggest": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8025/sse"
+    },
+    "ux-tester": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8026/sse"
+    },
+    "compute-ops": {
+      "type": "sse",
+      "url": "http://18.176.47.143:8027/sse"
     }
   }
 }
